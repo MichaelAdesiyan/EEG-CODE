@@ -1,0 +1,73 @@
+
+const int BUTTON_PIN1 = 3;       // the number of the pushbutton pin
+const int BUTTON_PIN2 = 4;
+const int BUTTON_PIN3 = 5;
+const int BUTTON_PIN4 = 6;
+const int BUTTON_PIN5 = 7;
+
+// Variables will change:
+int lastState = LOW;  // the previous state from the input pin
+int currentState;                // the current reading from the input pin
+
+int lastState1 = LOW;
+int currentState1; 
+
+int lastState2 = LOW;
+int currentState2; 
+
+int lastState3 = LOW;
+int currentState3; 
+
+int lastState4 = LOW;
+int currentState4; 
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(BUTTON_PIN1, INPUT_PULLUP);
+  pinMode(BUTTON_PIN2, INPUT_PULLUP);
+  pinMode(BUTTON_PIN3, INPUT_PULLUP);
+  pinMode(BUTTON_PIN4, INPUT_PULLUP);
+  pinMode(BUTTON_PIN5, INPUT_PULLUP);
+}
+
+void loop() {
+  currentState = digitalRead(BUTTON_PIN1);
+
+  if(lastState == HIGH && currentState == LOW)
+    Serial.println("The button1 is pressed");
+  else if(lastState == LOW && currentState == HIGH)
+    Serial.println("");
+  lastState = currentState;
+
+  currentState1 = digitalRead(BUTTON_PIN2);
+
+  if(lastState1 == HIGH && currentState1 == LOW)
+    Serial.println("The button2 is pressed");
+  else if(lastState1 == LOW && currentState1 == HIGH)
+    Serial.println("");
+  lastState1 = currentState1;
+
+   currentState2 = digitalRead(BUTTON_PIN3);
+
+  if(lastState2 == HIGH && currentState2 == LOW)
+    Serial.println("The button3 is pressed");
+  else if(lastState2 == LOW && currentState2 == HIGH)
+    Serial.println("");
+  lastState2 = currentState2;
+
+   currentState3 = digitalRead(BUTTON_PIN4);
+
+  if(lastState3 == HIGH && currentState3 == LOW)
+    Serial.println("The button4 is pressed");
+  else if(lastState3 == LOW && currentState3 == HIGH)
+    Serial.println("");
+  lastState3 = currentState3;
+
+   currentState4 = digitalRead(BUTTON_PIN5);
+
+  if(lastState4 == HIGH && currentState4 == LOW)
+    Serial.println("The button5 is pressed");
+  else if(lastState4 == LOW && currentState4 == HIGH)
+    Serial.println("");
+  lastState4 = currentState4;
+}
